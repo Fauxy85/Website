@@ -18,3 +18,5 @@ Edit `index.html` for the wording and `styles.css` for the design.
 
 ## Search setup
 The sitemap lists the site's single page; sections are anchors rather than separate pages. robots.txt advertises the sitemap. Canonical, sitemap and structured-data URLs use https://www.asbestosce.com/. GitHub Pages enforces HTTPS with a valid certificate. The root domain uses IONOS HTTP forwarding to the secure www address; HTTPS on the root domain is not configured. Search Console domain verification requires the TXT value supplied by Google's signed-in account; keep its verification record in DNS.
+
+The website has four static pages: Home (`/`), Services (`/services/`), About ACE (`/about/`) and Contact (`/contact/`). Services has four linked service groups. The October 2026 promotional strip can be paused and follows reduced-motion preferences; its script hides the seasonal strip from 1 November 2026.
