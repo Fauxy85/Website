@@ -51,3 +51,28 @@
   .service { padding: 28px; border-radius: 16px; }
   .service-top { margin-bottom: 22px; }
 }
+
+/* Follow the operating system automatically, including changes while open. */
+:root { color-scheme: light dark; }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #081b30;
+    --muted: #b5c9dd;
+    --pale: #142f4b;
+    --line: #35516c;
+    color: #edf5fc;
+  }
+  body { border-top-color: #88bedf; }
+  .eyebrow, .contact-links span { color: #9bd0f2; }
+  a:focus-visible { outline-color: #9bd0f2; }
+  .skip-link { color: #0b2c52; }
+  .hero-art { background: transparent; }
+  .hero-art img { max-width: 460px; margin-inline: auto; border-radius: 18px; border: 1px solid #35516c; }
+  .button { background: #9bd0f2; color: #081b30; box-shadow: 0 6px 20px #00000030; }
+  .button:hover { background: #c4e6fc; }
+  .services { background: #0a2340; }
+  .service { background: linear-gradient(155deg, #173f65 0%, #102f50 48%, #0a223c 100%); }
+  .service-note { background: linear-gradient(145deg, #244d70, #173753); color: #edf5fc; border-color: #52759a; }
+  .service-note p { color: #edf5fc; }
+  .footer { background: #051426; }
+}
