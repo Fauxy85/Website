@@ -139,7 +139,7 @@ nav{flex-wrap:wrap;gap:24px}nav a[aria-current="page"]{font-weight:700;text-deco
 
 /* Icy dotted circuits echo the ACE cover; aqua highlights on hover and keyboard focus. */
 .service-choice::after{content:'';position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;
-  background-color:#d2edff;opacity:.24;
+  background-color:#d2edff;opacity:.1;
   mask-image:url('/assets/ace-circuit-pattern.svg?v=molecules-1');mask-size:480px 340px;mask-repeat:repeat;mask-position:right top}
 .service-choice:focus-visible::after{background-color:#ffd48a;opacity:.75}
 @media(hover:hover){.service-choice:hover::after{background-color:#ffd48a;opacity:.75}}
