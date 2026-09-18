@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="240" viewBox="0 0 320 240">
-<defs><pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1" fill="white" opacity=".35"/></pattern></defs>
+<defs><pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.25" fill="white" opacity=".55"/></pattern></defs>
 <rect width="320" height="240" fill="url(#dots)"/>
-<g fill="none" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+<g fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
 <path d="M0 36h66l24 24h82l28-28h120M0 112h36l32-32h56l30 30h86l32-32h48M0 196h82l28-28h90l28 28h92M40 0v34m74-34v22l30 30m112-52v70l-32 32v66m-72 72v-34l-30-30m174 64v-40l-24-24v-40"/>
 </g><g fill="white"><circle cx="66" cy="36" r="3"/><circle cx="172" cy="60" r="3"/><circle cx="36" cy="112" r="3"/><circle cx="124" cy="80" r="3"/><circle cx="240" cy="110" r="3"/><circle cx="82" cy="196" r="3"/><circle cx="200" cy="168" r="3"/><circle cx="224" cy="168" r="3"/><circle cx="272" cy="136" r="3"/></g></svg>
