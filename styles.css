@@ -100,38 +100,3 @@ nav{flex-wrap:wrap;gap:24px}nav a[aria-current="page"]{font-weight:700;text-deco
   .service-choice:hover .choice-action span{transform:translate(3px,-3px)}
 }
 @media(prefers-reduced-motion:reduce){.reveal-pending{opacity:1;transform:none}}
-
-/* Extend the artwork's outer technical details beneath the copy.
-   Enlarging the left edge keeps the central logo and lettering outside the visible crop. */
-.hero,.page-intro,.home-about,.page-about,.contact,.detail-section,.services{position:relative;isolation:isolate}
-.hero::before,.page-intro::before,.home-about::before,.page-about::before,.contact::before,.detail-section::before,.services::before{
-  content:'';position:absolute;z-index:-1;pointer-events:none;inset:0;
-  background-image:url('/assets/ace-header.png');background-repeat:no-repeat;
-  background-size:480% auto;background-position:left center;opacity:.17;
-  mask-image:linear-gradient(90deg,#000 0%,#0008 35%,transparent 72%);
-}
-.hero::before{inset:0 -20px;background-size:340% auto;opacity:.32;mask-image:linear-gradient(90deg,#000 0%,#0009 32%,transparent 62%)}
-.hero-art{background:transparent;position:relative;margin-left:-35px}
-.hero-art img{mask-image:linear-gradient(90deg,transparent,#000 14%,#000 88%,transparent)}
-.services::before{background-image:url('/assets/ace-brand.png');background-size:650% auto;opacity:.22;mask-image:linear-gradient(90deg,#000,transparent 80%)}
-.service-choice{background:linear-gradient(155deg,#204d78e8 0%,#12385ee8 48%,#0c2949ed 100%)}
-.page-about .about-art img{box-shadow:none;border:0;mask-image:radial-gradient(ellipse,#000 50%,transparent 73%)}
-@media(prefers-color-scheme:dark){
-  .hero::before,.page-intro::before,.home-about::before,.page-about::before,.contact::before,.detail-section::before{background-image:url('/assets/ace-brand.png');background-size:650% auto;opacity:.14}
-  .hero::before{background-size:500% auto;opacity:.2}
-  .hero-art img{border:0;border-radius:0;mask-image:radial-gradient(ellipse,#000 48%,transparent 73%)}
-  .service-choice{background:linear-gradient(155deg,#173f65e8 0%,#102f50e8 48%,#0a223ced 100%)}
-}
-@media(max-width:680px){
-  .hero-art{margin-left:0}
-  .hero::before{inset:0;background-size:500% auto;opacity:.2;mask-image:linear-gradient(180deg,transparent 20%,#0008 55%,transparent)}
-  .page-intro::before,.home-about::before,.page-about::before,.contact::before,.detail-section::before{opacity:.12}
-}
-
-/* Use the detailed circuit strip above the dark emblem, without enlarging its border. */
-.services::before{background-size:100% auto;background-position:center top;opacity:.2;mask-image:linear-gradient(#000,transparent 190px)}
-.service-choice{position:relative;isolation:isolate}
-.service-choice::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit;background:url('/assets/ace-brand.png') center top/100% auto no-repeat;opacity:.14;mask-image:linear-gradient(#000,transparent 95px)}
-@media(prefers-color-scheme:dark){
-  .hero::before,.page-intro::before,.home-about::before,.page-about::before,.contact::before,.detail-section::before{background-size:100% auto;background-position:center top;mask-image:linear-gradient(#000,transparent 170px)}
-}
