@@ -4,6 +4,7 @@ const files = new Map([['/', ['index.html', 'text/html; charset=utf-8']], ['/ind
 files.set('/assets/ace-header.png', ['assets/ace-header.png', 'image/png']);
 files.set('/assets/ace-brand.png', ['assets/ace-brand.png', 'image/png']);
 files.set('/assets/ace-social-card.png', ['assets/ace-social-card.png', 'image/png']);
+files.set('/assets/ace-social-card-original-type.png', ['assets/ace-social-card-original-type.png', 'image/png']);
 files.set('/sitemap.xml', ['sitemap.xml', 'application/xml; charset=utf-8']);
 files.set('/robots.txt', ['robots.txt', 'text/plain; charset=utf-8']);
 createServer(async (request, response) => {
