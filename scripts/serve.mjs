@@ -1,6 +1,8 @@
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 const files = new Map([['/', ['index.html', 'text/html; charset=utf-8']], ['/index.html', ['index.html', 'text/html; charset=utf-8']], ['/styles.css', ['styles.css', 'text/css; charset=utf-8']], ['/favicon.svg', ['favicon.svg', 'image/svg+xml']]]);
+files.set('/assets/ace-header.png', ['assets/ace-header.png', 'image/png']);
+files.set('/assets/ace-brand.png', ['assets/ace-brand.png', 'image/png']);
 createServer(async (request, response) => {
   const asset = files.get(new URL(request.url, 'http://localhost').pathname);
   if (!asset) { response.writeHead(404); response.end('Not found'); return; }
