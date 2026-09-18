@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://www.asbestosce.com/sitemap.xml
+Sitemap: https://www.asbestosce.com/sitemap.xml

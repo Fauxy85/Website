@@ -17,4 +17,4 @@ The confirmed contact details are 07962 608931 and Info@asbestosce.com, covering
 Edit `index.html` for the wording and `styles.css` for the design.
 
 ## Search setup
-The sitemap lists the site's single page; sections are anchors rather than separate pages. robots.txt advertises the sitemap. Canonical, sitemap and structured-data URLs currently use the working HTTP address while GitHub provisions HTTPS. Switch these URLs to https://www.asbestosce.com/ once the certificate is valid and enforce HTTPS in Pages settings. Search Console domain verification requires the TXT value supplied by Google's signed-in account; keep its verification record in DNS.
+The sitemap lists the site's single page; sections are anchors rather than separate pages. robots.txt advertises the sitemap. Canonical, sitemap and structured-data URLs use https://www.asbestosce.com/. GitHub Pages enforces HTTPS with a valid certificate. The root domain uses IONOS HTTP forwarding to the secure www address; HTTPS on the root domain is not configured. Search Console domain verification requires the TXT value supplied by Google's signed-in account; keep its verification record in DNS.
