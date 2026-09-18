@@ -116,3 +116,20 @@ nav{flex-wrap:wrap;gap:24px}nav a[aria-current="page"]{font-weight:700;text-deco
   .hero-copy{width:100%;max-width:none}
   .hero-art img{object-position:center;opacity:.2;mask-image:linear-gradient(180deg,#0009,#0003)}
 }
+
+/* A brief soft sheen, followed by a long rest between sweeps. */
+.offer-banner{position:relative;isolation:isolate}
+.offer-banner::before{content:none}
+@media(prefers-reduced-motion:no-preference){
+  .offer-banner::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:linear-gradient(110deg,transparent 43%,#c7eaff0a 47%,#eaf7ff20 50%,#c7eaff0a 53%,transparent 57%);
+    background-size:300% 100%;background-position:100% 0;opacity:0;
+    animation:offer-sheen 16s ease-in-out 3s infinite}
+  .offer-banner:hover::before,.offer-banner:focus-within::before,.offer-banner.is-paused::before{animation-play-state:paused}
+}
+@keyframes offer-sheen{
+  0%{background-position:100% 0;opacity:0}
+  2%{opacity:1}
+  18%{background-position:0% 0;opacity:1}
+  20%,100%{background-position:0% 0;opacity:0}
+}
