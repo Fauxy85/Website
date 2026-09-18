@@ -7,3 +7,47 @@
 @media(max-width:900px){.wrap{width:calc(100% - 40px)}.hero{grid-template-columns:1fr 1fr;gap:20px}.hero h1{font-size:3rem}.service-grid{grid-template-columns:repeat(2,1fr)}.section-heading{align-items:flex-start}.about{gap:35px}.footer .wrap{flex-wrap:wrap}}
 @media(max-width:680px){.header{min-height:110px;align-items:flex-start;padding-top:22px;padding-bottom:22px;flex-direction:column;gap:22px}.brand-mark{font-size:2.25rem}.brand-name{font-size:.8rem}nav{gap:24px;font-size:.875rem}.hero{grid-template-columns:1fr;padding-top:36px;padding-bottom:40px;gap:24px}.hero h1{font-size:clamp(2.6rem,10vw,3.5rem)}.hero-art{grid-row:1}.hero-copy .eyebrow{margin-bottom:18px}.eyebrow{font-size:.75rem}.section-heading{flex-direction:column;gap:16px}.services{padding:44px 0}.service-grid{grid-template-columns:1fr;gap:12px}.service{min-height:0;padding:28px}.number{margin-bottom:18px}.about{padding-top:48px;padding-bottom:48px;grid-template-columns:1fr;gap:38px}.about-art{max-width:340px;width:100%;margin:auto}.contact{grid-template-columns:1fr;gap:20px;padding-top:44px;padding-bottom:44px}.footer .wrap{align-items:flex-start;flex-direction:column;gap:15px}.footer p{margin:0}.desktop-break{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Blue depth and consistent service symbols complement ACE's spade branding. */
+.service {
+  border-radius: 18px;
+  padding: 32px;
+  background: linear-gradient(155deg, #204d78 0%, #12385e 48%, #0c2949 100%);
+  border-color: #52759a;
+  box-shadow: 0 8px 24px #04162a24, inset 0 1px 0 #ffffff0f;
+}
+.service-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+.service-icon {
+  width: 54px;
+  height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #d3edff;
+  background: #8dc6eb14;
+  border: 1px solid #86b6d75c;
+  border-radius: 14px;
+}
+.service-top .number { margin: 0; color: #badcf3; letter-spacing: .08em; }
+.service h3 { margin-bottom: 18px; }
+.service p { line-height: 1.75; }
+.service-note {
+  background: linear-gradient(145deg, #e6f4fe, #c4deef);
+  border-color: #d8ebf8;
+}
+.service-note p { line-height: 1.2; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  article.service { transition: border-color .2s ease, box-shadow .2s ease; }
+  article.service:hover { border-color: #90c5e9; box-shadow: 0 8px 24px #04162a24, inset 0 0 0 1px #90c5e93b; }
+}
+@media (max-width: 680px) {
+  .service { padding: 28px; border-radius: 16px; }
+  .service-top { margin-bottom: 22px; }
+}
