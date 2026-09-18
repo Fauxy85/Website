@@ -12,3 +12,31 @@ if(banner){
     });
   }
 }
+
+// Reveal below-the-fold content once; keep navigation and focused content visible.
+const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+if('IntersectionObserver' in window){
+  const revealTargets=document.querySelectorAll('.section-heading, .service-choice, .detail-section > h2, .detail-pair article, .home-about > div, .contact > div');
+  const show=element=>element.classList.remove('reveal-pending');
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){show(entry.target);observer.unobserve(entry.target);}});
+  },{threshold:0.08});
+  if(!motionPreference.matches){
+    revealTargets.forEach(element=>{
+      if(element.getBoundingClientRect().top>window.innerHeight && !element.closest(':target')){
+        element.classList.add('scroll-reveal','reveal-pending');observer.observe(element);
+      }
+    });
+  }
+  document.addEventListener('focusin',event=>{
+    const element=event.target.closest('.reveal-pending');if(element)show(element);
+  });
+  const showDestination=()=>{
+    const destination=document.getElementById(window.location.hash.slice(1));
+    if(destination){show(destination);destination.querySelectorAll('.reveal-pending').forEach(show);}
+  };
+  window.addEventListener('hashchange',showDestination);
+  motionPreference.addEventListener('change',event=>{
+    if(event.matches){revealTargets.forEach(show);observer.disconnect();}
+  });
+}

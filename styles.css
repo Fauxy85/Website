@@ -85,3 +85,18 @@ nav{flex-wrap:wrap;gap:24px}nav a[aria-current="page"]{font-weight:700;text-deco
 .offer-pause{display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:40px}.banner-control-icon{display:block}@media(prefers-reduced-motion:reduce){.offer-pause{display:none}}
 
 .detail-section p .text-link{display:inline;margin-top:0;font-weight:inherit;text-decoration:underline;text-underline-offset:3px}
+
+/* Restrained motion, with visible content as the default when scripts are unavailable. */
+@media(prefers-reduced-motion:no-preference){
+  .scroll-reveal{transition:opacity .55s ease,transform .55s cubic-bezier(.2,.65,.3,1)}
+  .reveal-pending{opacity:0;transform:translateY(16px)}
+  .service-choice{transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,opacity .55s ease}
+  .choice-action span{transition:transform .22s ease}
+  .service-choice:focus-visible{transform:translateY(-4px);border-color:#a9daf8;box-shadow:0 12px 30px #04162a50,0 0 20px #88bedf20}
+  .service-choice:focus-visible .choice-action span{transform:translate(3px,-3px)}
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .service-choice:hover{transform:translateY(-4px);border-color:#a9daf8;box-shadow:0 12px 30px #04162a50,0 0 20px #88bedf20}
+  .service-choice:hover .choice-action span{transform:translate(3px,-3px)}
+}
+@media(prefers-reduced-motion:reduce){.reveal-pending{opacity:1;transform:none}}
