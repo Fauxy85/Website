@@ -100,3 +100,19 @@ nav{flex-wrap:wrap;gap:24px}nav a[aria-current="page"]{font-weight:700;text-deco
   .service-choice:hover .choice-action span{transform:translate(3px,-3px)}
 }
 @media(prefers-reduced-motion:reduce){.reveal-pending{opacity:1;transform:none}}
+
+/* Full-section artwork with page copy layered over its faded left side. */
+.hero{position:relative;isolation:isolate;display:block;min-height:650px;padding-block:100px;overflow:hidden}
+.hero-copy{position:relative;z-index:1;width:46%;max-width:550px}
+.hero-art{position:absolute;z-index:-1;inset:0;pointer-events:none;background:transparent}
+.hero-art picture{display:block;width:100%;height:100%}
+.hero-art img{width:100%;height:100%;max-width:none;margin:0;object-fit:cover;object-position:center;border:0;border-radius:0;mask-image:linear-gradient(90deg,#0001 0%,#0002 28%,#0008 47%,#000 65%)}
+@media(prefers-color-scheme:dark){
+  .hero-art img{max-width:none;margin:0;border:0;border-radius:0;object-position:75% center;mask-image:linear-gradient(90deg,#0001 0%,#0002 34%,#0007 53%,#000 75%)}
+}
+@media(max-width:900px){.hero{min-height:600px;padding-block:80px}.hero-copy{width:52%}}
+@media(max-width:680px){
+  .hero{min-height:0;padding-block:60px}
+  .hero-copy{width:100%;max-width:none}
+  .hero-art img{object-position:center;opacity:.2;mask-image:linear-gradient(180deg,#0009,#0003)}
+}
