@@ -83,3 +83,5 @@ nav{flex-wrap:wrap;gap:24px}nav a[aria-current="page"]{font-weight:700;text-deco
 .service-choices{grid-template-columns:repeat(2,minmax(0,1fr))}.service-choice{min-height:310px}@media(max-width:680px){.service-choices{grid-template-columns:1fr}.service-choice{min-height:270px}}
 
 .offer-pause{display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:40px}.banner-control-icon{display:block}@media(prefers-reduced-motion:reduce){.offer-pause{display:none}}
+
+.detail-section p .text-link{display:inline;margin-top:0;font-weight:inherit;text-decoration:underline;text-underline-offset:3px}
