@@ -40,3 +40,34 @@ if('IntersectionObserver' in window){
     if(event.matches){revealTargets.forEach(show);observer.disconnect();}
   });
 }
+
+// A word-by-word drop into a clipped frame, with accessible heading names retained.
+if('IntersectionObserver' in window && !motionPreference.matches){
+  const headingObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove('heading-pending');headingObserver.unobserve(entry.target);}});
+  },{threshold:.1});
+  const headings=document.querySelectorAll('.hero h1, .page-intro h1, .page-about h1, .section-heading h2, .detail-section > h2, .home-about h2, .contact h2, .enquiry-note h2');
+  headings.forEach(heading=>{
+    heading.setAttribute('aria-label',heading.innerText.replace(/\s+/g,' ').trim());
+    const walker=document.createTreeWalker(heading,NodeFilter.SHOW_TEXT);
+    const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+    let wordIndex=0;
+    nodes.forEach(node=>{
+      const fragment=document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach(word=>{
+        if(!word)return;
+        if(/^\s+$/.test(word)){fragment.append(document.createTextNode(word));return;}
+        const frame=document.createElement('span'),inner=document.createElement('span');
+        frame.className='heading-word';frame.setAttribute('aria-hidden','true');
+        inner.className='heading-word-inner';inner.textContent=word;
+        inner.style.setProperty('--word-delay',Math.min(wordIndex++*45,225)+'ms');
+        frame.append(inner);fragment.append(frame);
+      });
+      node.replaceWith(fragment);
+    });
+    if(!heading.closest(':target')){heading.classList.add('heading-pending');headingObserver.observe(heading);}
+  });
+  const revealHeadings=()=>headings.forEach(h=>h.classList.remove('heading-pending'));
+  window.addEventListener('hashchange',revealHeadings);
+  motionPreference.addEventListener('change',event=>{if(event.matches){revealHeadings();headingObserver.disconnect();}});
+}
