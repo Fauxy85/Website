@@ -136,3 +136,11 @@ nav{flex-wrap:wrap;gap:24px}nav a[aria-current="page"]{font-weight:700;text-deco
 .ace-cover{margin-block:0 60px}.ace-cover img{width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
 .linkedin-contact{font-size:clamp(1.25rem,2vw,1.65rem)!important}
 @media(max-width:680px){.ace-cover{margin-bottom:40px}.ace-cover img{border-radius:10px}}
+
+/* Icy dotted circuits echo the ACE cover; aqua highlights on hover and keyboard focus. */
+.service-choice::after{content:'';position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;
+  background-color:#d2edff;opacity:.16;
+  mask-image:url('/assets/ace-circuit-pattern.svg');mask-size:320px 240px;mask-repeat:repeat;mask-position:right top}
+.service-choice:focus-visible::after{background-color:#72def2;opacity:.3}
+@media(hover:hover){.service-choice:hover::after{background-color:#72def2;opacity:.3}}
+@media(prefers-reduced-motion:no-preference){.service-choice::after{transition:background-color .3s ease,opacity .3s ease}}
