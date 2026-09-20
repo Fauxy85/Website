@@ -7,8 +7,9 @@ files.set('/assets/ace-social-card.png', ['assets/ace-social-card.png', 'image/p
 files.set('/assets/ace-social-card-original-type.png', ['assets/ace-social-card-original-type.png', 'image/png']);
 files.set('/assets/ace-linkedin-banner.png', ['assets/ace-linkedin-banner.png', 'image/png']);
 files.set('/assets/ace-circuit-pattern.svg', ['assets/ace-circuit-pattern.svg', 'image/svg+xml']);
+files.set('/assets/christopher-oconnor.jpg', ['assets/christopher-oconnor.jpg', 'image/jpeg']);
 files.set('/site.js', ['site.js', 'text/javascript; charset=utf-8']);
-for (const page of ['services', 'about', 'contact']) {
+for (const page of ['services', 'about', 'christopher-oconnor', 'contact']) {
   for (const path of [`/${page}/`, `/${page}/index.html`]) files.set(path, [`${page}/index.html`, 'text/html; charset=utf-8']);
 }
 files.set('/sitemap.xml', ['sitemap.xml', 'application/xml; charset=utf-8']);
