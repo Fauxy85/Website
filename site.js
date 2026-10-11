@@ -32,6 +32,28 @@ if(banner){
   });
 }
 
+const enquiryForm=document.querySelector('#enquiry-form');
+if(enquiryForm){
+  enquiryForm.addEventListener('submit',event=>{
+    event.preventDefault();
+    if(!enquiryForm.reportValidity())return;
+    const data=new FormData(enquiryForm);
+    const subject=`Website enquiry — ${data.get('service')} — ${data.get('location')}`;
+    const body=[
+      `Name: ${data.get('name')}`,
+      `Email: ${data.get('email')}`,
+      `Phone: ${data.get('phone')||'Not provided'}`,
+      `Property location or postcode: ${data.get('location')}`,
+      `Service needed: ${data.get('service')}`,
+      '',
+      'Project details:',
+      data.get('message')
+    ].join('\n');
+    document.querySelector('#enquiry-status').textContent='Your email app should open with the enquiry ready to review.';
+    window.location.href=`mailto:Info@asbestosce.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+}
+
 // Reveal below-the-fold content once; keep navigation and focused content visible.
 const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
 if('IntersectionObserver' in window){
